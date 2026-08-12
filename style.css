@@ -1,0 +1,144 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #EFEBE1;
+  font-family: Manrope, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: #1C4A38; text-decoration: none; }
+a:hover { color: #2A6B50; }
+
+@keyframes ngLift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.ng-page {
+  min-height: 100vh;
+  background: #EFEBE1;
+  display: flex;
+  justify-content: center;
+}
+
+.ng-frame {
+  width: 100%;
+  max-width: 430px;
+  background: #F6F3EB;
+  position: relative;
+  overflow: hidden;
+}
+
+/* header */
+.ng-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 16px 18px 14px;
+  background: #F6F3EB;
+}
+.ng-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.ng-logo {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #1C4A38;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Instrument Serif", serif; font-size: 17px; color: #F6F3EB;
+  flex: none;
+}
+.ng-brand-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ng-brand-name { font-size: 13px; font-weight: 800; letter-spacing: 2.4px; color: #132A21; white-space: nowrap; }
+.ng-brand-sub { font-size: 9px; font-weight: 700; letter-spacing: 1.6px; color: #8A8778; text-transform: uppercase; white-space: nowrap; }
+.ng-date {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  padding: 8px 14px; border-radius: 14px; background: #E4DFD2; flex: none;
+}
+.ng-date span { font-family: "Instrument Serif", serif; font-size: 17px; line-height: 1.05; color: #1C4A38; white-space: nowrap; }
+
+/* hero */
+.ng-hero { position: relative; height: 392px; overflow: hidden; border-radius: 0 0 34px 34px; }
+.ng-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; }
+.ng-hero-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(19,42,33,.28) 0%, rgba(19,42,33,0) 34%, rgba(19,42,33,.42) 82%, rgba(19,42,33,.72) 100%);
+}
+.ng-hero-person {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  height: 80%; width: auto;
+  filter: drop-shadow(0 20px 34px rgba(0,0,0,.45));
+}
+
+/* headline */
+.ng-hero-copy {
+  padding: 26px 22px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  text-align: center;
+}
+.ng-headline {
+  margin: 0;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400; font-size: 38px; line-height: 1.08; color: #132A21;
+  text-wrap: balance;
+}
+.ng-accent { font-style: italic; color: #2A6B50; }
+.ng-sub {
+  margin: 0; max-width: 350px;
+  font-size: 15px; font-weight: 500; line-height: 1.55; color: #5C6B60;
+  text-wrap: pretty;
+}
+
+/* amenities */
+.ng-amenities-wrap { padding: 18px 18px 0; display: flex; flex-direction: column; gap: 10px; }
+.ng-amenities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ng-amenity {
+  position: relative; height: 118px; border-radius: 18px; overflow: hidden;
+  border: 1px solid #E4DFD2;
+  box-shadow: 0 10px 22px -18px rgba(19,42,33,.55);
+}
+.ng-amenity-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ng-amenity-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(19,42,33,.05) 0%, rgba(19,42,33,.62) 100%);
+}
+.ng-amenity-label {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 12px 10px;
+  font-size: 13.5px; font-weight: 700; line-height: 1.25; color: #fff;
+  text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
+
+.ng-tags-row { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 4px 6px 0; flex-wrap: wrap; }
+.ng-tag { font-size: 11.5px; font-weight: 700; letter-spacing: .6px; color: #3B5548; }
+.ng-tag-dot { width: 4px; height: 4px; border-radius: 50%; background: #A8BFB0; }
+
+/* promo */
+.ng-promo-wrap { padding: 20px 18px 0; }
+.ng-promo { display: flex; align-items: center; justify-content: center; gap: 9px; flex-wrap: wrap; padding: 4px 8px; }
+.ng-promo-side { font-size: 12.5px; font-weight: 600; color: #7C8A80; }
+.ng-promo-count {
+  font-family: "Instrument Serif", serif; font-size: 22px; color: #8A6A22;
+  border-bottom: 1px solid rgba(138,106,34,.45); padding-bottom: 1px;
+}
+
+/* cta + countdown + footer */
+.ng-footer-block { padding: 20px 18px 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.ng-cta {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 20px 22px; border-radius: 999px;
+  background: #1C4A38;
+  box-shadow: 0 16px 34px -14px rgba(28,74,56,.75);
+  animation: ngLift 3.2s ease-in-out infinite;
+}
+.ng-cta-label { font-size: 17px; font-weight: 800; letter-spacing: .4px; color: #F6F3EB; }
+.ng-cta-arrow { font-size: 17px; color: #B8D9C6; }
+
+.ng-countdown { display: flex; align-items: baseline; justify-content: center; gap: 8px; }
+.ng-countdown-num { font-family: "Instrument Serif", serif; font-size: 34px; line-height: 1; letter-spacing: 1px; color: #1C4A38; }
+.ng-countdown-colon { font-family: "Instrument Serif", serif; font-size: 30px; line-height: 1; color: #A8BFB0; }
+
+.ng-footer {
+  width: 100%; margin-top: 10px; padding-top: 16px;
+  border-top: 1px solid #E4DFD2;
+  text-align: center;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; color: #A9A695;
+  text-transform: uppercase;
+}
